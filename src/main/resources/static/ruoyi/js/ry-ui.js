@@ -502,6 +502,37 @@
             	}
             	$.modal.open("修改" + $.table._option.modalName, url);
             },
+            set_admin: function(id) {
+                if ($.common.isNotEmpty(id)) {
+                    $.modal.confirm("确定为该用户授权吗？", function() {
+                        var url = $.common.isEmpty(id) ? $.table._option.updateUrl : $.table._option.updateUrl.replace("{id}", id);
+                        var data = { "ids": id };
+                        $.operate.submit(url, "post", "json", data);
+                    });
+                } else {
+                    var id = $.common.isEmpty($.table._option.uniqueId) ? $.table.selectFirstColumns() : $.table.selectColumns($.table._option.uniqueId);
+                    if (id.length == 0) {
+                        $.modal.alertWarning("请至少选择一条记录");
+                        return;
+                    }
+                }
+            },
+            // 修改信息
+            set_user: function(id) {
+                if ($.common.isNotEmpty(id)) {
+                    $.modal.confirm("确定取消该用户的授权吗？", function() {
+                        var url = $.common.isEmpty(id) ? $.table._option.setUserUrl : $.table._option.setUserUrl.replace("{id}", id);
+                        var data = { "ids": id };
+                        $.operate.submit(url, "post", "json", data);
+                    });
+                } else {
+                    var id = $.common.isEmpty($.table._option.uniqueId) ? $.table.selectFirstColumns() : $.table.selectColumns($.table._option.uniqueId);
+                    if (id.length == 0) {
+                        $.modal.alertWarning("请至少选择一条记录");
+                        return;
+                    }
+                }
+            },
             // 工具栏表格树修改
             editTree: function() {
             	var row = $('#bootstrap-tree-table').bootstrapTreeTable('getSelections')[0];

@@ -6,9 +6,9 @@ spring:
         druid:
             # 主库数据源
             master:
-                url: jdbc:mysql://localhost:3306/ry?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
-                username: root
-                password: password
+                url: jdbc:mysql://114.118.99.86:3306/wxuser-admin-operation?useUnicode=true&characterEncoding=UTF8&connectTimeout=10000&socketTimeout=100000&allowMultiQueries=true&useSSL=false
+                username: keycloak
+                password: keycloak123
             # 从库数据源
             slave:
                 # 从数据源开关/默认关闭

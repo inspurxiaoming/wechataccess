@@ -1,7 +1,7 @@
 # 项目相关配置
 ruoyi:
   # 名称
-  name: RuoYi
+  name: chengym
   # 版本
   version: 3.1.0
   # 版权年份
@@ -14,10 +14,10 @@ ruoyi:
 # 开发环境配置
 server:
   # 服务端口
-  port: 80
+  port: 8098
   servlet:
     # 项目contextPath
-    context-path: /
+    context-path: /user-set
   tomcat:
     # tomcat的URI编码
     uri-encoding: UTF-8
@@ -120,7 +120,7 @@ xss:
   # 排除链接（多个用逗号分隔）
   excludes: /system/notice/*
   # 匹配链接
-  urlPatterns: /system/*,/monitor/*,/tool/*
+  urlPatterns: /system/*,/monitor/*,/tool/*,/empower/*
 
 # 代码生成
 gen: 

@@ -4,13 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.ruoyi</groupId>
-	<artifactId>RuoYi</artifactId>
+	<artifactId>inspur-bss-admin</artifactId>
 	<version>3.1.0</version>
 	<packaging>jar</packaging>
 
-	<name>RuoYi</name>
-	<url>http://www.ruoyi.vip</url>
-	<description>若依管理系统</description>
+	<name>inspur-bss-admin</name>
+	<url>https://www.chengym.info</url>
+	<description>用户授权管理后台</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -259,6 +259,13 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>${poi.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.4</version>
+			<scope>provided</scope>
 		</dependency>
 
 	</dependencies>
