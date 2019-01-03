@@ -22,6 +22,7 @@ public class ResponseBean<T> {
 
     // 响应中的数据
     private T data;
+    int total;
 
     private String ok;	// 不使用
 
@@ -146,5 +147,13 @@ public class ResponseBean<T> {
 
     public void setCode(Integer code) {
         this.code = code;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
     }
 }

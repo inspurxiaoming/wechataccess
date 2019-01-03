@@ -132,3 +132,7 @@ gen:
   autoRemovePre: true
   # 表前缀(类名不会包含表前缀)
   tablePrefix: sys_
+operateruser:
+  usersUrl: https://www.chengym.info/user/list
+  setAdminUrl: https://www.chengym.info/user/%s/set-admin
+  setUserUrl: https://www.chengym.info/user/%s/set-user

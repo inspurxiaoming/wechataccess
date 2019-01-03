@@ -8,8 +8,8 @@
 <c:Children>
 <o:Model Id="o2">
 <a:ObjectID>21C20947-ED50-4632-B638-DC1A02BD948A</a:ObjectID>
-<a:Name>ruoyi</a:Name>
-<a:Code>ruoyi</a:Code>
+<a:Name>inspur-bss-admin</a:Name>
+<a:Code>inspur-bss-admin</a:Code>
 <a:CreationDate>1524449337</a:CreationDate>
 <a:Creator>Administrator</a:Creator>
 <a:ModificationDate>1538297587</a:ModificationDate>

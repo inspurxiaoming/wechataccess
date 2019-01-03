@@ -3,6 +3,8 @@ package com.ruoyi.framework.web.controller;
 import java.beans.PropertyEditorSupport;
 import java.util.Date;
 import java.util.List;
+
+import com.github.pagehelper.Page;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import com.github.pagehelper.PageHelper;
@@ -54,6 +56,21 @@ public class BaseController
             PageHelper.startPage(pageNum, pageSize, orderBy);
         }
     }
+    /**
+     * 设置请求分页数据
+     */
+    protected Page startPages()
+    {
+        PageDomain pageDomain = TableSupport.buildPageRequest();
+        Integer pageNum = pageDomain.getPageNum();
+        Integer pageSize = pageDomain.getPageSize();
+        if (StringUtils.isNotNull(pageNum) && StringUtils.isNotNull(pageSize))
+        {
+            String orderBy = pageDomain.getOrderBy();
+            return PageHelper.startPage(pageNum, pageSize, orderBy);
+        }
+        return null;
+    }
 
     /**
      * 响应请求分页数据
@@ -65,6 +82,16 @@ public class BaseController
         rspData.setCode(0);
         rspData.setRows(list);
         rspData.setTotal(new PageInfo(list).getTotal());
+        return rspData;
+    }
+
+    protected TableDataInfo getDataTable(List<?> list,int total)
+    {
+        TableDataInfo rspData = new TableDataInfo();
+        rspData.setCode(0);
+        rspData.setRows(list);
+        new PageInfo(list);
+        rspData.setTotal(total);
         return rspData;
     }
 

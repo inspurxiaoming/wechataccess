@@ -29,21 +29,22 @@
             <div class="col-sm-7">
                 <div class="signin-info">
                     <div class="logopanel m-b">
-                        <h1><img alt="[ inspur]" style="border-radius: 110px;" src="../static/ruoyi.png" th:src="@{/ruoyi.png}"></h1>
+                        <!--<h1><img alt="[ inspur]" style="border-radius: 110px;" src="../static/ruoyi.png" th:src="@{/ruoyi.png}"></h1>-->
+                        <h1><img alt="[ inspur]" style="border-radius: 110px;" src="https://images.chengym.cc/inspurcloud_qr.png" ></h1>
                     </div>
                     <div class="m-b"></div>
                     <h4>欢迎使用 <strong>用户授权管理后台</strong></h4>
                     <ul class="m-b">
                     </ul>
-                    <strong>还没有账号？ <a href="#">立即注册&raquo;</a></strong>
+                    <!--<strong>还没有账号？ <a href="#">立即注册&raquo;</a></strong>-->
                 </div>
             </div>
             <div class="col-sm-5">
                 <form id="signupForm">
                     <h4 class="no-margins">登录：</h4>
-                    <p class="m-t-md">生活，诚不可欺</p>
-                    <input type="text"     name="username" class="form-control uname"     placeholder="用户名" value="admin"    />
-                    <input type="password" name="password" class="form-control pword"     placeholder="密码"   value="admin123" />
+                    <p class="m-t-md">生活，诚不可欺。只是不想加班</p>
+                    <input type="text"     name="username" class="form-control uname"     placeholder="用户名" value=""    />
+                    <input type="password" name="password" class="form-control pword"     placeholder="密码"   value="" />
 					<div class="row m-t" th:if="${captchaEnabled==true}">
 						<div class="col-xs-6">
 						    <input type="text" name="validateCode" class="form-control code" placeholder="验证码" maxlength="5">
@@ -63,7 +64,7 @@
         </div>
         <div class="signup-footer">
             <div class="pull-left">
-                &copy; 2018 All Rights Reserved. RuoYi <br>
+                &copy; 2018 All Rights Reserved. chym <br>
                 <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">	鲁ICP备16036661号-2 </a><br>
             </div>
         </div>
@@ -82,3 +83,4 @@
 <script src="../static/ruoyi/login.js" th:src="@{/ruoyi/login.js}"></script>
 </body>
 </html>
+operlog

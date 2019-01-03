@@ -1,5 +1,6 @@
 package com.ruoyi.project.empower.post.controller;
 
+import com.github.pagehelper.Page;
 import com.ruoyi.common.utils.bean.ResponseBean;
 import com.ruoyi.framework.web.controller.BaseController;
 import com.ruoyi.framework.web.page.TableDataInfo;
@@ -7,6 +8,7 @@ import com.ruoyi.project.empower.post.domain.WXUser;
 import com.ruoyi.project.system.post.service.IPostService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.MultiValueMap;
@@ -31,8 +33,12 @@ public class EmpowerController extends BaseController {
     @Autowired
     private IPostService postService;
 
+//    private String usersUrl = "https://www.chengym.info/user/list";
+    @Value("${operateruser.usersUrl}")
     private String usersUrl = "https://www.chengym.info/user/list";
+    @Value("${operateruser.setAdminUrl}")
     private String setAdminUrl = "https://www.chengym.info/user/%s/set-admin";
+    @Value("${operateruser.setUserUrl}")
     private String setUserUrl = "https://www.chengym.info/user/%s/set-user";
 
     @RequiresPermissions("operation:user:view")
@@ -45,10 +51,11 @@ public class EmpowerController extends BaseController {
     @PostMapping("/user-list")
     @ResponseBody
     public TableDataInfo list() {
-//        startPage();
-        ResponseEntity<ResponseBean> responseEntity = restTemplate.getForEntity(usersUrl, ResponseBean.class, "");
+        Page page = startPages();
+        String url = usersUrl + "?start="+page.getStartRow()+"&length="+page.getPageSize();
+        ResponseEntity<ResponseBean> responseEntity = restTemplate.getForEntity(url, ResponseBean.class, page);
         ResponseBean<WXUser> responseBean = responseEntity.getBody();
-        return getDataTable((List<WXUser>) responseBean.getData());
+        return getDataTable((List<WXUser>) responseBean.getData(),responseBean.getTotal());
     }
     @RequiresPermissions("operation:user:view")
     @PostMapping("/update/{userId}/set-admin")
