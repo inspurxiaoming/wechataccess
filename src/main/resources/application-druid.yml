@@ -6,7 +6,7 @@ spring:
         druid:
             # 主库数据源
             master:
-                url: jdbc:mysql://114.118.99.86:3306/wxuser-admin-operation?useUnicode=true&characterEncoding=UTF8&connectTimeout=10000&socketTimeout=100000&allowMultiQueries=true&useSSL=false
+                url: jdbc:mysql://114.118.99.86:3306/wxuser-admin-operation-dev?useUnicode=true&characterEncoding=UTF8&connectTimeout=10000&socketTimeout=100000&allowMultiQueries=true&useSSL=false
                 username: keycloak
                 password: keycloak123
             # 从库数据源
@@ -16,13 +16,6 @@ spring:
                 url:
                 username:
                 password:
-            # 用户数据源
-            userdb:
-                # 用户数据源开关/默认关闭
-                enabled: false
-                url: jdbc:mysql://114.118.99.86:3306/wxuser-db-operation?useUnicode=true&characterEncoding=UTF8&connectTimeout=10000&socketTimeout=100000&allowMultiQueries=true&useSSL=false
-                username: keycloak
-                password: keycloak123
             # 初始连接数
             initial-size: 10
             # 最大连接池数量
