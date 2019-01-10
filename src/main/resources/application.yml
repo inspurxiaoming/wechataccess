@@ -134,5 +134,6 @@ gen:
   tablePrefix: sys_
 operateruser:
   usersUrl: https://www.chengym.info/user/list
+  oldUserUrl: https://www.chengym.info/user/old-list
   setAdminUrl: https://www.chengym.info/user/%s/set-admin
   setUserUrl: https://www.chengym.info/user/%s/set-user
